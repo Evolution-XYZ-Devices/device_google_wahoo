@@ -420,9 +420,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # DRM HAL
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.3.vendor \
-    android.hardware.drm-service.clearkey \
+    android.hardware.drm-service.clearkey
+
+# Protobuf
+PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-3.9.1-vendorcompat \
-    libprotobuf-cpp-lite-3.9.1-vendorcompat
+    libprotobuf-cpp-lite-3.9.1-vendorcompat \
+    libprotobuf-cpp-full-vendorcompat \
+    libprotobuf-cpp-lite-vendorcompat
 
 # NFC packages
 PRODUCT_PACKAGES += \
