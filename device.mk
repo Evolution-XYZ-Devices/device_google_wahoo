@@ -410,6 +410,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SecureElement
 
+# Remove unwanted packages
+PRODUCT_PACKAGES += \
+    RemovePackages
+
 PRODUCT_COPY_FILES += \
     device/google/wahoo/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_PRODUCT)/etc/libnfc-nci.conf \
 
