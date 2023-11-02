@@ -185,15 +185,6 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.oemlock</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IOemLock</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.power.stats</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -261,15 +252,6 @@
         <version>1.0</version>
         <interface>
             <name>IOffloadControl</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>android.hardware.weaver</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IWeaver</name>
             <instance>default</instance>
         </interface>
     </hal>
