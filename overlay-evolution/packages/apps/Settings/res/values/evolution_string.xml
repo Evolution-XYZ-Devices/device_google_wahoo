@@ -4,7 +4,6 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
-
     <string name="build_maintainer_summary">Asriadi Rahim</string>
     <string name="build_maintainer_telegram">https://t.me/asriadirahim</string>
 </resources>
