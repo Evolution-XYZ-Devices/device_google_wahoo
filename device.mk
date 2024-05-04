@@ -198,12 +198,32 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.control_privapp_permissions?=enforce
 
-# Radio Hal
+# QTI
 PRODUCT_PACKAGES += \
-    android.hardware.radio@1.1.vendor \
-    android.hardware.radio.config@1.0 \
-    android.hardware.radio.config@1.0-service \
+    libqti_vndfwk_detect.vendor
+
+# RIL
+PRODUCT_PACKAGES += \
+    android.hardware.radio@1.5.vendor \
+    android.hardware.radio.config@1.2.vendor \
+    android.hardware.radio.deprecated@1.0.vendor \
+    android.hardware.secure_element@1.2.vendor \
+    librmnetctl \
     libxml2
+
+# Telephony
+PRODUCT_PACKAGES += \
+    ims-ext-common \
+    ims_ext_common.xml \
+    libgui_shim \
+    qti-telephony-hidl-wrapper \
+    qti_telephony_hidl_wrapper.xml \
+    qti-telephony-utils \
+    qti_telephony_utils.xml \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
 
 # Audio fluence, ns, aec property, voice and media volume steps
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -266,7 +286,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.telephony.block_binder_thread_on_incoming_calls=false
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
+    vendor.rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 
 # Disable snapshot timer
 PRODUCT_PROPERTY_OVERRIDES += \
