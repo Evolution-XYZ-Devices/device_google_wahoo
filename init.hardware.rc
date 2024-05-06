@@ -256,10 +256,6 @@ on zygote-start
     mkdir /data/misc/port_bridge 0770 radio radio
     chmod 0770 /data/misc/port_bridge
 
-    #create netmgr log dir
-    mkdir /data/vendor/netmgr 0771 radio radio
-    chmod 0771 /data/vendor/netmgr
-
     # Create the directories used by CnE subsystem
     mkdir /data/connectivity 0771 system system
     chown system system /data/connectivity
@@ -394,15 +390,7 @@ on boot
     mkdir /dev/socket/qmux_gps 0770 gps gps
     chmod 2770 /dev/socket/qmux_gps
 
-    # Create NETMGR daemon socket area
-    mkdir /dev/socket/netmgr 0750 radio radio
-
     setprop wifi.interface wlan0
-
-    # Assign TCP buffer thresholds to be ceiling value of technology maximums
-    # Increased technology maximums should be reflected here.
-    write /proc/sys/net/core/rmem_max  8388608
-    write /proc/sys/net/core/wmem_max  8388608
 
     # Bluetooth
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/type
@@ -613,38 +601,6 @@ service vendor.cnss-daemon /vendor/bin/cnss-daemon -n -l
    class late_start
    user system
    group system inet wifi
-
-service vendor.imsqmidaemon /vendor/bin/imsqmidaemon
-   class main
-   user system
-   socket ims_qmid stream 0660 system radio
-   group radio log diag
-
-service vendor.imsdatadaemon /vendor/bin/imsdatadaemon
-   class main
-   user system
-   socket ims_datad stream 0660 system radio
-   group system wifi radio inet log
-   disabled
-
-on property:vendor.ims.QMI_DAEMON_STATUS=1
-   start vendor.imsdatadaemon
-
-service vendor.ims_rtp_daemon /vendor/bin/ims_rtp_daemon
-   class main
-   user system
-   group radio diag inet log
-   disabled
-
-service vendor.imsrcsservice /vendor/bin/imsrcsd
-   class hal
-   user system
-   group radio diag inet log
-   disabled
-
-on property:vendor.ims.DATA_DAEMON_STATUS=1
-   start vendor.ims_rtp_daemon
-   start vendor.imsrcsservice
 
 service vendor.cnd /vendor/bin/cnd
    class main

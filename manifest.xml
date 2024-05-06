@@ -228,7 +228,7 @@
     <hal format="hidl">
         <name>android.hardware.radio.config</name>
         <transport>hwbinder</transport>
-        <version>1.0</version>
+        <version>1.1</version>
         <interface>
             <name>IRadioConfig</name>
             <instance>default</instance>
@@ -304,7 +304,7 @@
     <hal format="hidl">
         <name>vendor.qti.data.factory</name>
         <transport>hwbinder</transport>
-        <version>2.2</version>
+        <version>2.3</version>
         <interface>
             <name>IFactory</name>
             <instance>default</instance>
@@ -325,6 +325,15 @@
         <version>1.1</version>
         <interface>
             <name>IDataConnection</name>
+            <instance>slot1</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.data.iwlan</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IIWlan</name>
             <instance>slot1</instance>
         </interface>
     </hal>
@@ -353,15 +362,6 @@
         <interface>
             <name>IQtiOemHook</name>
             <instance>oemhook0</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.qti.hardware.radio.qtiradio</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IQtiRadio</name>
-            <instance>slot1</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -405,7 +405,7 @@
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
-        <name>IService</name>
+            <name>IService</name>
             <instance>default</instance>
         </interface>
     </hal>

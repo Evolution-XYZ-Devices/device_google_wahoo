@@ -132,6 +132,14 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
+        <name>android.hardware.radio.config</name>
+        <version>1.1</version>
+        <interface>
+            <name>IRadioConfig</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
         <name>android.hardware.sensors</name>
         <version>1.0</version>
         <interface>
@@ -157,7 +165,7 @@
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.data.factory</name>
-        <version>2.2</version>
+        <version>2.3</version>
         <interface>
             <name>IFactory</name>
             <instance>default</instance>
@@ -188,6 +196,14 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
+        <name>vendor.qti.hardware.data.iwlan</name>
+        <version>1.0</version>
+        <interface>
+            <name>IIWlan</name>
+            <instance>slot1</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.radio.ims</name>
         <version>1.6</version>
         <interface>
@@ -209,14 +225,6 @@
         <interface>
             <name>IQtiOemHook</name>
             <instance>oemhook0</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.radio.qtiradio</name>
-        <version>1.0</version>
-        <interface>
-            <name>IQtiRadio</name>
-            <instance>slot1</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
